@@ -1,7 +1,7 @@
 name: "HCL AppScan CodeSweep"
 on:
   pull_request:
-    branch:
+    branches:
     - main
 jobs:
   scan:
@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-          with:
-            fetch-depth: 0
+        with:
+          fetch-depth: 0
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2
         with:
